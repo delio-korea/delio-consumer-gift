@@ -619,6 +619,20 @@
 .packaging-note{max-width:1536px;margin:18px auto 0;color:#7a827e;font-size:.7rem;text-align:right}
 @media(max-width:1100px){.packaging-layout{grid-template-columns:1fr}.packaging-details{display:grid;grid-template-columns:repeat(2,1fr);column-gap:36px}.packaging-kicker{grid-column:1/-1}.packaging-photo{min-height:510px}}
 @media(max-width:700px){.packaging-visual{min-height:360px}.packaging-visual>img{min-height:360px}.packaging-photo{min-height:360px}}
+
+/* Real-photo On Brix-style packaging infographic */
+.packaging-infographic{position:relative;display:block;aspect-ratio:3 / 2;min-height:0;padding:36px;overflow:hidden;background:#f5f0e6;color:#173c32}
+.infographic-heading{position:absolute;left:5%;top:6%;display:grid;gap:5px;z-index:2}
+.infographic-heading strong{font-family:"Noto Serif KR",serif;font-size:clamp(1.35rem,2.4vw,2.2rem);font-weight:600}
+.infographic-heading span{color:#657069;font-size:clamp(.68rem,1vw,.9rem)}
+.info-item{position:absolute;margin:0;overflow:visible}
+.info-item img{display:block;width:100%;height:100%;object-fit:cover;background:#ebe5da}
+.info-item figcaption{position:absolute;padding:10px 14px;background:rgba(255,255,255,.88);color:#173c32;font-family:"Noto Serif KR",serif;font-size:clamp(.72rem,1.1vw,1rem);line-height:1.35;white-space:nowrap}
+.info-box{left:5%;top:25%;width:45%;height:58%}.info-box figcaption{left:5%;top:-12%;}
+.info-divider{left:54%;top:25%;width:22%;height:40%}.info-divider figcaption{left:95%;bottom:5%;}
+.info-bojagi{right:5%;top:25%;width:22%;height:30%}.info-bojagi img{object-position:center}.info-bojagi figcaption{right:95%;top:8%;}
+.info-card{left:54%;bottom:6%;width:18%;height:22%}.info-card figcaption{left:110%;top:22%;}
+.info-note{position:absolute;left:5%;bottom:6%;display:flex;align-items:baseline;gap:14px;padding:10px 14px;background:rgba(255,255,255,.88);color:#173c32}.info-note b{font-family:"Noto Serif KR",serif;font-size:clamp(.72rem,1.1vw,1rem);font-weight:600}.info-note span{font-size:clamp(.62rem,.9vw,.8rem);color:#657069}
 @media(max-width:900px){.packaging-head{grid-template-columns:1fr;gap:25px}}
 @media(max-width:620px){
   .collection{padding-bottom:45px}
@@ -627,9 +641,17 @@
   .packaging-head{display:block}
   .packaging-head h2{font-size:clamp(1.85rem,8vw,2.3rem);line-height:1.35}
   .packaging-head>p{margin-top:25px;font-size:.88rem;line-height:1.8}
-  .packaging-layout,.packaging-note{display:none}
-  .packaging-mobile-infographic{display:block;width:100%;margin-top:34px;overflow:hidden;background:#f4efe6;box-shadow:0 18px 45px rgba(26,45,37,.12);line-height:0}
-  .packaging-mobile-infographic img{position:static;display:block;width:100%;height:auto;max-width:100%;clip-path:none;margin:0;vertical-align:top}
+  .packaging-layout{display:block;margin-top:34px}
+  .packaging-layout .packaging-details,.packaging-note{display:none}
+  .packaging-mobile-infographic{display:none}
+  .packaging-infographic{aspect-ratio:3 / 4;padding:18px;box-shadow:0 18px 45px rgba(26,45,37,.12)}
+  .infographic-heading{left:6%;top:4%;gap:3px}.infographic-heading strong{font-size:1.35rem}.infographic-heading span{font-size:.66rem}
+  .info-item figcaption{padding:7px 9px;font-size:.7rem}
+  .info-box{left:6%;top:18%;width:58%;height:27%}.info-box figcaption{left:2%;top:-20%}
+  .info-divider{left:37%;top:42%;width:57%;height:24%}.info-divider figcaption{left:48%;bottom:-25%}
+  .info-bojagi{right:6%;top:69%;width:43%;height:18%}.info-bojagi figcaption{right:96%;top:4%}
+  .info-card{left:6%;bottom:5%;width:29%;height:15%}.info-card figcaption{left:108%;top:10%}
+  .info-note{left:6%;right:6%;bottom:1.5%;gap:7px;padding:6px 8px;display:block}.info-note b{font-size:.68rem}.info-note span{display:block;font-size:.58rem}
   .packaging+.benefits{border-top:0}
 }
 
