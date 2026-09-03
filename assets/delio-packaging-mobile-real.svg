@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1536">
+  <rect width="1024" height="1536" fill="#f5f0e6"/>
+  <path d="M58 80H966" stroke="#cbb88b" stroke-width="2"/>
+  <text x="62" y="128" fill="#b08d4d" font-family="Arial, sans-serif" font-size="20" letter-spacing="5">DELIO PACKAGING</text>
+  <text x="62" y="198" fill="#173c32" font-family="serif" font-size="54" font-weight="600">델리오 선물 패키지</text>
+  <text x="62" y="242" fill="#52615a" font-family="sans-serif" font-size="23">받는 순간까지 안전하고 정성스럽게</text>
+
+  <rect x="62" y="300" width="900" height="360" rx="2" fill="#e9e3d8"/>
+  <image x="92" y="326" width="510" height="310" preserveAspectRatio="xMidYMid slice" href="delivery-outer-box.png"/>
+  <path d="M610 390H706V350H856" fill="none" stroke="#b28c45" stroke-width="3"/>
+  <circle cx="610" cy="390" r="7" fill="#b28c45"/>
+  <text x="720" y="343" fill="#173c32" font-family="serif" font-size="28">견고한 외부</text>
+  <text x="720" y="381" fill="#173c32" font-family="serif" font-size="28">배송 박스</text>
+
+  <rect x="62" y="700" width="900" height="390" rx="2" fill="#e9e3d8"/>
+  <image x="108" y="730" width="470" height="330" preserveAspectRatio="xMidYMid slice" href="gift-inner-divider.png"/>
+  <path d="M584 850H690V810H874" fill="none" stroke="#b28c45" stroke-width="3"/>
+  <circle cx="584" cy="850" r="7" fill="#b28c45"/>
+  <text x="704" y="802" fill="#173c32" font-family="serif" font-size="28">내부 칸막이</text>
+  <text x="704" y="840" fill="#173c32" font-family="serif" font-size="28">보호 구조</text>
+
+  <rect x="62" y="1130" width="425" height="300" fill="#eee8de"/>
+  <image x="82" y="1150" width="385" height="260" preserveAspectRatio="xMidYMid slice" href="delio-bojagi-red.png"/>
+  <text x="520" y="1200" fill="#173c32" font-family="serif" font-size="28">정갈한 보자기 포장</text>
+  <text x="520" y="1245" fill="#66726b" font-family="sans-serif" font-size="20">한가위의 마음을 담아</text>
+  <text x="520" y="1278" fill="#66726b" font-family="sans-serif" font-size="20">정성스럽게 포장합니다.</text>
+
+  <text x="520" y="1375" fill="#173c32" font-family="serif" font-size="28">감사 카드 동봉</text>
+  <text x="520" y="1420" fill="#66726b" font-family="sans-serif" font-size="20">선물의 마음을 카드에 담아</text>
+  <text x="520" y="1453" fill="#66726b" font-family="sans-serif" font-size="20">함께 보내드립니다.</text>
+  <image x="720" y="1280" width="210" height="170" preserveAspectRatio="xMidYMid meet" href="delio-thankyou-card.png"/>
+</svg>
