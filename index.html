@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="product-catalog.css">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -60,9 +61,9 @@
 
     <section class="farm-story section" id="farm-story" aria-labelledby="farm-story-title">
       <div class="section-label">01 / 우리를 믿을 수 있는 이유</div>
-      <div class="farm-story-head reveal">
-        <div><p class="eyebrow">우리를 믿을 수 있는 이유</p><h2 id="farm-story-title">직접 확인한 상품만,<br>선물세트에 담습니다.</h2></div>
-        <p>델리오는 농가와 직접 소통하고 산지 상품을 직접 확인합니다.<br> 선물로 보내도 좋다고 판단한 상품만 엄선해 정성스럽게 담아드립니다.</p>
+      <div class="farm-story-head">
+        <div class="farm-story-title reveal"><p class="eyebrow">우리를 믿을 수 있는 이유</p><h2 id="farm-story-title">직접 확인한 상품만,<br>선물세트에 담습니다.</h2></div>
+        <p class="farm-story-description reveal"><span class="farm-description-sentence">델리오는 농가와 직접 소통하고<br class="farm-description-break"> 산지 상품을 직접 확인합니다.</span><span class="farm-description-sentence">선물로 보내도 좋다고 판단한 상품만 엄선해<br class="farm-description-break"> 정성스럽게 담아드립니다.</span></p>
       </div>
       <div class="farm-media-grid">
         <figure class="farm-video-main reveal">
@@ -70,21 +71,19 @@
             <source src="assets/farm-direct-trade.mp4" type="video/mp4">
           </video>
           <figcaption><strong>실제 산지 상품 확인</strong><span>농가와 직접 소통하며 상품의 <br class="mobile-break">상태를 꼼꼼히 살핍니다.</span></figcaption>
-          <button class="video-toggle" type="button" data-video-toggle aria-label="현장 영상 일시정지">Ⅱ</button>
         </figure>
         <figure class="farm-video-sub reveal">
           <video muted autoplay loop playsinline preload="metadata" aria-label="사과 상품 입고 현장">
             <source src="assets/apple-arrival.mp4" type="video/mp4">
           </video>
           <figcaption><strong>선물 기준 상품만</strong><span>직접 인수한 상품을 확인하고 <br class="mobile-break">좋은 품질만 선별합니다.</span></figcaption>
-          <button class="video-toggle" type="button" data-video-toggle aria-label="입고 영상 일시정지">Ⅱ</button>
         </figure>
       </div>
       <ol class="farm-flow reveal" aria-label="델리오 산지 직거래 과정">
-        <li><b>01</b><span>믿을 수 있는 산지 선택</span></li>
-        <li><b>02</b><span>상품 상태 직접 확인</span></li>
-        <li><b>03</b><span>선물 기준으로 엄선</span></li>
-        <li><b>04</b><span>좋은 상품만 정성 포장</span></li>
+        <li><b>01</b><h3>검증된 산지와 협력</h3><p>검증된 협력 산지에서 과일을 공급받습니다.</p></li>
+        <li><b>02</b><h3>상품 상태 직접 확인</h3><p>입고된 과일의 품질을 <span>직접 확인합니다.</span></p></li>
+        <li><b>03</b><h3>선물 기준으로 엄선</h3><p>선물에 어울리는 <span>좋은 과일만 고릅니다.</span></p></li>
+        <li><b>04</b><h3>받는 순간까지 정성껏</h3><p>받는 분을 생각하며 <span class="packing-copy-line">정성껏 포장합니다.</span></p></li>
       </ol>
     </section>
 
@@ -94,26 +93,114 @@
         <div><p class="eyebrow">마음을 담아 고르는 선물</p><h2>프리미엄 선물세트</h2></div>
         <p>소중한 분께 전하기 좋은 선물을 준비했습니다.<br>마음에 맞는 구성을 골라보세요.</p>
       </div>
-      <div class="product-filters" role="group" aria-label="가격대별 상품 보기">
-        <button class="product-filter active" type="button" data-filter="all">전체보기</button>
-        <button class="product-filter" type="button" data-filter="40-50">4–5만원대</button>
-        <button class="product-filter" type="button" data-filter="60-80">6–8만원대</button>
-        <button class="product-filter" type="button" data-filter="90-plus">9만원 이상</button>
+      <p class="collection-photo-note">※ 선물세트 이미지는 실제 상품을 촬영한 사진입니다.</p>
+      <div class="product-filters" role="group" aria-label="선물세트 등급별 보기">
+        <button class="product-filter active" type="button" data-filter="all" aria-pressed="true">전체보기</button>
+        <button class="product-filter" type="button" data-filter="jeongseong" aria-pressed="false">정성</button>
+        <button class="product-filter" type="button" data-filter="gamsa" aria-pressed="false">감사</button>
+        <button class="product-filter" type="button" data-filter="maeum" aria-pressed="false">마음</button>
       </div>
       <div class="cards" data-product-grid>
-        <article class="gift-card reveal" data-price="40-50"><div class="card-art pear"></div><p class="card-tag">4–5만원대 · ESSENTIAL</p><h3>샤인머스켓 5송이 세트</h3><p>싱그러운 샤인머스켓 다섯 송이를 정갈하게 담은 실속 선물 구성</p><div class="product-card-footer"><strong>4–5만원대</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="샤인머스켓 5송이 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>샤인머스켓 5송이 박스 구성</dd></div><div><dt>추천 대상</dt><dd>가족 · 지인 · 부담 없는 감사 선물</dd></div><div><dt>주문 안내</dt><dd>선물 포장과 희망 배송일을 상담해드립니다.</dd></div></dl></div></article>
-        <article class="gift-card featured reveal" data-price="60-80"><div class="card-art mixed"></div><p class="card-tag">6만원대 · SIGNATURE</p><h3>프리미엄 사과 16과 세트</h3><p>빛깔 좋은 사과 열여섯 과를 반듯하게 담은 풍성한 명절 선물 구성</p><div class="product-card-footer"><strong>6만원대</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="프리미엄 사과 16과 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>프리미엄 사과 16과</dd></div><div><dt>추천 대상</dt><dd>부모님 · 가족 · 명절 선물</dd></div><div><dt>주문 안내</dt><dd>정성스러운 포장과 메시지 동봉을 상담해드립니다.</dd></div></dl></div></article>
-        <article class="gift-card reveal" data-price="60-80"><div class="card-art pear-twelve"></div><p class="card-tag">6만원대 · SIGNATURE</p><h3>프리미엄 배 12과 세트</h3><p>황금빛 배 열두 과를 정갈하게 담아 품격과 풍성함을 전하는 선물 구성</p><div class="product-card-footer"><strong>6만원대</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="프리미엄 배 12과 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>프리미엄 배 12과</dd></div><div><dt>추천 대상</dt><dd>부모님 · 어르신 · 감사 선물</dd></div><div><dt>주문 안내</dt><dd>정성스러운 포장과 희망 배송일을 상담해드립니다.</dd></div></dl></div></article>
-        <article class="gift-card reveal" data-price="60-80"><div class="card-art apple-twelve"></div><p class="card-tag">6만원대 · SIGNATURE</p><h3>프리미엄 사과 12과 세트</h3><p>크고 빛깔 좋은 사과 열두 과를 엄선해 담은 정성스러운 명절 선물 구성</p><div class="product-card-footer"><strong>6만원대</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="프리미엄 사과 12과 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>프리미엄 사과 12과</dd></div><div><dt>추천 대상</dt><dd>가족 · 은사님 · 감사 선물</dd></div><div><dt>주문 안내</dt><dd>정성스러운 포장과 메시지 동봉을 상담해드립니다.</dd></div></dl></div></article>
-        <article class="gift-card reveal" data-price="90-plus"><div class="card-art vip"></div><p class="card-tag">9만원 이상 · PRIVATE</p><h3>프라이빗 맞춤 세트</h3><p>희소 품종과 고급 패키지를 결합한 특별 주문 구성</p><div class="product-card-footer"><strong>맞춤 상담</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="프라이빗 맞춤 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>시즌별 최상급 과일과 희소 품종 맞춤 구성</dd></div><div><dt>추천 대상</dt><dd>부모님 · 귀한 분 · 특별한 기념일</dd></div><div><dt>주문 안내</dt><dd>시즌 과일과 고급 패키지를 맞춤 안내해드립니다.</dd></div></dl></div></article>
+        <article class="gift-card reveal" data-product-id="jeongseong-1" data-category="jeongseong">
+          <div class="jeongseong-photo-frame"><img class="card-art product-photo" src="assets/jeongseong-1-framed.png" alt="정성 1호 혼합 과일 선물세트" loading="lazy"></div>
+          <p class="card-tag">정성 선물세트</p>
+          <h3>정성 1호 <span class="gift-badge recommended">추천</span></h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 96,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정성 1호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 3입</li><li>11Brix 이상 당도 선별 신고배 3입</li><li>당일 직수입 고당도 애플망고 2입</li><li>최소 17Brix 이상 당도 선별 샤인머스켓 2입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="jeongseong-2" data-category="jeongseong">
+          <div class="jeongseong-photo-frame"><img class="card-art product-photo" src="assets/jeongseong-2-framed.png" alt="정성 2호 선물세트" loading="lazy"></div>
+          <p class="card-tag">정성 선물세트</p>
+          <h3>정성 2호 <span class="gift-badge recommended">추천</span></h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 94,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정성 2호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 6입</li><li>11Brix 이상 당도 선별 신고배 6입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="jeongseong-3" data-category="jeongseong">
+          <div class="jeongseong-photo-frame"><img class="card-art product-photo" src="assets/jeongseong-3-framed.png" alt="정성 3호 선물세트" loading="lazy"></div>
+          <p class="card-tag">정성 선물세트</p>
+          <h3>정성 3호 <span class="gift-badge popular">인기</span></h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 84,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정성 3호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 4입</li><li>11Brix 이상 당도 선별 신고배 4입</li><li>최소 17Brix 이상 당도 선별 샤인머스켓 2입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="jeongseong-4" data-category="jeongseong">
+          <div class="jeongseong-photo-frame"><img class="card-art product-photo" src="assets/jeongseong-4-framed.png" alt="정성 4호 선물세트" loading="lazy"></div>
+          <p class="card-tag">정성 선물세트</p>
+          <h3>정성 4호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 79,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정성 4호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 3입</li><li>11Brix 이상 당도 선별 신고배 3입</li><li>최소 17Brix 이상 당도 선별 샤인머스켓 3입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="jeongseong-5" data-category="jeongseong">
+          <div class="jeongseong-photo-frame"><img class="card-art product-photo" src="assets/jeongseong-5.png" alt="정성 5호 선물세트" loading="lazy"></div>
+          <p class="card-tag">정성 선물세트</p>
+          <h3>정성 5호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 99,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정성 5호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 12입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="jeongseong-6" data-category="jeongseong">
+          <div class="jeongseong-photo-frame"><img class="card-art product-photo" src="assets/jeongseong-6-framed.png" alt="정성 6호 선물세트" loading="lazy"></div>
+          <p class="card-tag">정성 선물세트</p>
+          <h3>정성 6호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 84,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정성 6호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>11Brix 이상 당도 선별 신고배 12입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="gamsa-1" data-category="gamsa">
+          <img class="card-art product-photo" src="assets/gamsa-2-v2.png" alt="감사 1호 선물세트" loading="lazy">
+          <p class="card-tag">감사 선물세트</p>
+          <h3>감사 1호 <span class="gift-badge recommended">추천</span></h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 73,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="감사 1호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 4입</li><li>11Brix 이상 당도 선별 신고배 3입</li><li>최소 17Brix 이상 당도 선별 샤인머스켓 1입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="gamsa-2" data-category="gamsa">
+          <img class="card-art product-photo" src="assets/gamsa-1-v2.png" alt="감사 2호 선물세트" loading="lazy">
+          <p class="card-tag">감사 선물세트</p>
+          <h3>감사 2호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 70,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="감사 2호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 3입</li><li>11Brix 이상 당도 선별 신고배 4입</li><li>최소 17Brix 이상 당도 선별 샤인머스켓 1입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="gamsa-3" data-category="gamsa">
+          <img class="card-art product-photo" src="assets/gamsa-3-v2.png" alt="감사 3호 선물세트" loading="lazy">
+          <p class="card-tag">감사 선물세트</p>
+          <h3>감사 3호 <span class="gift-badge popular">인기</span></h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 76,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="감사 3호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 5입</li><li>11Brix 이상 당도 선별 신고배 4입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="gamsa-4" data-category="gamsa">
+          <img class="card-art product-photo" src="assets/gamsa-4-v3.png" alt="감사 4호 사과 선물세트" loading="lazy">
+          <p class="card-tag">사과 선물세트</p>
+          <h3>감사 4호 <span class="gift-badge popular">인기</span></h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 84,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="감사 4호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>14Brix 이상 당도선별 홍로사과 9입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="gamsa-5" data-category="gamsa">
+          <img class="card-art product-photo" src="assets/gamsa-5-v2.png" alt="감사 5호 선물세트" loading="lazy">
+          <p class="card-tag">감사 선물세트</p>
+          <h3>감사 5호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 69,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="감사 5호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>11Brix 이상 당도 선별 신고배 9입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="maeum-1" data-category="maeum">
+          <img class="card-art product-photo" src="assets/maeum-1-v2.png" alt="마음 1호 선물세트" loading="lazy">
+          <p class="card-tag">마음 선물세트</p>
+          <h3>마음 1호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 64,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="마음 1호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>고당도 홍로사과 11~12입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
+        <article class="gift-card reveal" data-product-id="maeum-2" data-category="maeum">
+          <img class="card-art product-photo" src="assets/maeum-2-v2.png" alt="마음 2호 선물세트" loading="lazy">
+          <p class="card-tag">마음 선물세트</p>
+          <h3>마음 2호</h3>
+          <div class="product-card-footer"><div class="product-price-block"><strong>판매가 59,800원</strong></div><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="마음 2호 상세 보기">+</button></div>
+          <div class="product-detail"><dl><div class="product-composition"><dt>상품 구성</dt><dd><ul class="product-composition-list"><li>고당도 신고배 11~12입</li></ul></dd></div><div class="product-perks"><dt>선물세트 혜택</dt><dd><ul class="product-benefits"><li>개별 당도 선별</li><li>전국 무료배송</li><li>보자기 선물 포장</li><li>감사 메시지 카드 동봉</li></ul></dd></div></dl></div>
+        </article>
       </div>
+      <button class="collection-more" type="button" data-collection-more aria-expanded="false">선물세트 더보기 <span>＋</span></button>
     </section>
 
     <section class="packaging section" id="packaging" aria-labelledby="packaging-title">
       <div class="section-label">03 / 받는 순간까지 생각한 포장</div>
       <div class="packaging-head reveal">
-        <div><p class="eyebrow">받는 순간까지 생각한 포장</p><h2 id="packaging-title">좋은 과일을 안전하게,<br>정성까지 담았습니다.</h2></div>
-        <p>직접 선별한 과일은 개별 완충망으로 보호하고,<br class="mobile-break"> 보자기 포장과 감사 카드까지 함께 준비했습니다.</p>
+        <div><h2 id="packaging-title">좋은 과일을 안전하게,<br>정성까지 담았습니다.</h2></div>
+        <p>직접 선별한 과일은 개별 완충망으로 보호하고,<br class="packaging-head-break">보자기 포장과 감사 카드까지 함께 준비했습니다.</p>
       </div>
       <figure class="packaging-mobile-infographic">
         <img src="assets/delio-packaging-mobile-user.png" alt="명절 스페셜 패키지: 아이보리 선물 박스, 홍색 보자기, 추석 감사 카드와 겹박스 이중 포장" loading="lazy">
@@ -152,8 +239,8 @@
       <ol class="steps">
         <li class="reveal"><b class="step-number">01</b><i class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 37v-7a18 18 0 0 1 36 0v7M14 36h5v14h-5a5 5 0 0 1-5-5v-4a5 5 0 0 1 5-5Zm36 0h-5v14h5a5 5 0 0 0 5-5v-4a5 5 0 0 0-5-5ZM44 50c0 5-4 7-9 7h-3"/><circle cx="29" cy="57" r="2"/></svg></i><span>STEP 01</span><h3>선물 문의</h3><p>원하는 상품과 배송일을 알려주세요.</p></li>
         <li class="reveal"><b class="step-number">02</b><i class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="15" y="12" width="34" height="44" rx="3"/><path d="M25 12V8h14v4M23 28l4 4 7-8M23 42l4 4 7-8M38 29h6M38 43h6"/></svg></i><span>STEP 02</span><h3>상품 안내·선택</h3><p>구성과 가격을 안내받고 골라보세요.</p></li>
-        <li class="reveal"><b class="step-number">03</b><i class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M16 8h25l9 9v39H16zM41 8v10h9M23 30h18M23 39h12M37 48l12-12 5 5-12 12-7 2z"/></svg></i><span>STEP 03</span><h3>주문·결제</h3><p>상품과 배송 정보를 확인하고 결제합니다.</p></li>
-        <li class="reveal"><b class="step-number">04</b><i class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 18h31v28H8zM39 28h10l8 9v9H39zM14 25h16M8 34h12"/><circle cx="18" cy="49" r="5"/><circle cx="49" cy="49" r="5"/></svg></i><span>STEP 04</span><h3>선별·포장·배송</h3><p>좋은 과일을 골라 정성껏 보내드립니다.</p></li>
+        <li class="reveal"><b class="step-number">03</b><i class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M16 8h25l9 9v39H16zM41 8v10h9M23 30h18M23 39h12M37 48l12-12 5 5-12 12-7 2z"/></svg></i><span>STEP 03</span><h3>주문·결제</h3><p>상품과 배송 정보를<br class="process-copy-break"> 확인하고 결제합니다.</p></li>
+        <li class="reveal"><b class="step-number">04</b><i class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 18h31v28H8zM39 28h10l8 9v9H39zM14 25h16M8 34h12"/><circle cx="18" cy="49" r="5"/><circle cx="49" cy="49" r="5"/></svg></i><span>STEP 04</span><h3>선별·포장·배송</h3><p>좋은 과일을 골라<br class="process-copy-break"> 정성껏 보내드립니다.</p></li>
       </ol>
     </section>
 

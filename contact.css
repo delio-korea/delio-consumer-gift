@@ -71,6 +71,26 @@
 
 @media(max-width:700px){.process .steps li{border-right:1px solid rgba(23,60,50,.14)!important}}
 
+@media(max-width:700px){
+  .inquiry-form label{min-width:0;white-space:nowrap}
+  .inquiry-form input[type="date"]{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+}
+
+/* Keep the mobile chapter-label-to-heading gap consistent with chapter one. */
+@media(max-width:700px){
+  main>.section>.section-label{margin-bottom:24px!important}
+}
+
+/* Keep mobile heading-to-body spacing consistent across chapters. */
+@media(max-width:700px){
+  .farm-story-head,.collection-head,.packaging-head{row-gap:20px!important}
+  .farm-story-head h2,.collection-head h2,.packaging-head h2{margin-bottom:0!important}
+  .farm-story-head>p,.collection-head>p,.packaging-head>p{margin-top:0!important}
+  .collection>.collection-photo-note{margin-top:12px!important}
+  .packaging-head{row-gap:28px!important}
+  .contact-copy>.eyebrow{margin-bottom:8px}
+}
+
 @media(max-width:540px){.header-actions{gap:5px}.header-actions .button-small{padding:8px 9px;font-size:.68rem}}
 .contact-guide{margin:0 0 26px;color:#52605a;font-size:.9rem}
 .contact-options{display:grid;gap:12px}
@@ -101,6 +121,8 @@
 .hero .hero-secondary{background:#f3efe5;color:#173c32}
 .hero .hero-secondary:hover{background:#fff}
 .hero .hero-secondary span{margin-left:16px}
+.hero-actions .button{width:180px;justify-content:center}
+.hero-proof{font-size:.88rem}
 
 /* 보자기 포장과 제철 과일을 담은 추석 메인 비주얼 */
 .hero-media{background-image:linear-gradient(90deg,rgba(9,29,24,.96) 0%,rgba(9,29,24,.74) 36%,rgba(9,29,24,.08) 68%),url("assets/chuseok-hero-v2.png")}
@@ -504,6 +526,19 @@
   .product-filter,.product-filter:first-child{font-size:.62rem}
 }
 
+/* Put the step number inside its circular icon instead of above it. */
+.process .steps li{position:relative}
+.process .step-number{display:none}
+.process .step-icon{position:relative}
+.process .steps span{color:#648f5e}
+.process .steps li span{color:#648f5e!important}
+.process .steps li:not(:last-child):after{color:#648f5e}
+.process-copy-break{display:none}
+@media(max-width:700px){
+  .process .steps span{display:block;margin:14px 0 8px;color:#648f5e;font-size:.62rem;font-weight:700;letter-spacing:.1em;line-height:1.3}
+  .process-copy-break{display:block!important}
+}
+
 /* 섹션별 대제목 크기 통일 */
 .section h2,
 .intro-grid>div:first-child h2,
@@ -562,10 +597,11 @@
 
 /* Consumer landing: corporate proof is replaced by gifting occasions. */
 .consumer-occasions{padding-top:42px;padding-bottom:42px}
+.consumer-occasions>p{font-family:inherit;line-height:1.65;letter-spacing:-.02em}
 .occasion-grid>div{display:flex!important;min-height:92px!important;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:0!important;padding:14px!important;text-align:center}
-.occasion-grid strong{font-family:"Noto Serif KR",serif;color:var(--green);font-size:1.12rem;font-weight:600}
-.occasion-grid span{margin:0!important;color:#6b756f;font-size:.76rem;white-space:normal!important}
-@media(max-width:620px){.consumer-occasions{padding-top:30px;padding-bottom:32px}.occasion-grid{row-gap:8px}.occasion-grid>div{min-height:82px!important;padding:10px 6px!important}.occasion-grid strong{font-size:1rem}}
+.occasion-grid strong{font-family:inherit;color:var(--green);font-size:1rem;font-weight:600;line-height:1.5;letter-spacing:-.02em}
+.occasion-grid span{margin:0!important;font-family:inherit;color:#6b756f;font-size:.86rem;line-height:1.7;letter-spacing:-.02em;word-break:keep-all;white-space:normal!important}
+@media(max-width:620px){.consumer-occasions{padding-top:30px;padding-bottom:32px}.occasion-grid{row-gap:8px}.occasion-grid>div{min-height:82px!important;padding:10px 6px!important}.occasion-grid strong{font-size:.92rem}.occasion-grid span{font-size:.8rem}}
 
 /* Real farm and direct-trade story */
 .farm-story{background:#efe8db;overflow:hidden}
@@ -598,6 +634,7 @@
 .packaging{background:#faf7f0}
 .packaging-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:clamp(40px,7vw,110px);align-items:end;max-width:1536px;margin:0 auto}
 .packaging-head>p{margin:0;color:#5e6963;font-size:.95rem;word-break:keep-all}
+@media(min-width:901px){.packaging-head>p{grid-column:2;justify-self:end;width:100%;max-width:470px;margin-right:0;text-align:right}}
 .packaging-mobile-infographic{display:none;margin:0}
 .packaging-mobile-infographic img{display:block;width:100%;height:auto}
 .packaging-layout{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(300px,.82fr);gap:20px;max-width:1536px;margin:58px auto 0;align-items:stretch}
@@ -755,6 +792,31 @@ body{background:#f7f6f1}
 .packaging-details strong{font-size:1.08rem;color:#294b39}
 .packaging-details span{font-size:.86rem;line-height:1.7;color:#5c6d60}
 .packaging-kicker{font-size:.7rem;color:#6f965f;margin-bottom:28px}
+
+/* Slightly larger, shared type scale and aligned edges for the packaging chapter. */
+.packaging-head>p{font-size:1rem;line-height:1.8}
+.packaging-details{align-self:stretch}
+.packaging-details>div>b{font-size:.74rem}
+.packaging-details strong{font-size:1.12rem;line-height:1.5}
+.packaging-details span{font-size:.9rem;line-height:1.75}
+.packaging-kicker{font-size:.74rem}
+.packaging-note{font-size:.76rem}
+
+/* Consumer packaging details: sage step numbers and comfortable two-line copy. */
+.packaging-details>div>b{color:#648f5e}
+@media(min-width:901px){
+  .packaging-details span{max-width:270px}
+  .packaging-details strong{display:block}
+  .packaging-copy-break{display:block}
+  .packaging-details>div:nth-of-type(2) span,
+  .packaging-details>div:nth-of-type(3) span{max-width:none;white-space:nowrap}
+}
+@media(max-width:900px){.packaging-copy-break{display:none}}
+@media(max-width:700px){
+  .packaging-head>p{font-size:.92rem}
+  .packaging-kicker{font-size:.7rem}
+  .packaging-note{font-size:.72rem}
+}
 .benefit-copy h2{font-size:clamp(2rem,3vw,3rem);line-height:1.28}
 .benefit-copy h2{font-size:clamp(1.85rem,2.5vw,2.6rem);line-height:1.32}
 .benefit-visual{position:relative;overflow:hidden;background:#e5efda}
@@ -863,7 +925,8 @@ body{background:#f7f6f1}
 .process .steps h3{color:#294b39}
 .process .steps p{color:#68766d}
 .process .steps li:not(:last-child):after{color:#78a66f}
-.site-header nav{font-size:.9rem;gap:36px}
+.site-header nav{gap:26px;font-size:.94rem}
+@media(max-width:1100px){.site-header nav{gap:16px;font-size:.86rem}}
 .header-actions .button-small:not(.header-kakao){color:#222}
 .header-actions .button-small:not(.header-kakao):hover,
 .header-actions .button-small:not(.header-kakao):focus,
@@ -888,4 +951,132 @@ body{background:#f7f6f1}
   .farm-media-grid,.product-filters,.cards,.packaging-mobile-infographic,.steps,.faq-list,.contact-panel{
     margin-left:0;
   }
+}
+
+/* Match the deployed corporate video dimensions. */
+.farm-media-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:1080px;margin:32px auto 0}
+.farm-media-grid figure{aspect-ratio:auto;border:0;box-shadow:none}
+.farm-media-grid video{height:auto;aspect-ratio:16/9}
+@media(max-width:620px){.farm-media-grid{grid-template-columns:1fr;gap:14px;margin:26px auto 0}}
+/* Video captions aligned to the lower left. */
+.farm-media-grid figcaption{left:20px;right:64px;bottom:20px;gap:5px;text-align:left}
+.farm-media-grid figcaption strong{font-family:inherit;font-size:1rem;font-weight:600;line-height:1.45;letter-spacing:-.02em}
+.farm-media-grid figcaption span{font-size:.8rem;line-height:1.6;letter-spacing:-.02em;color:rgba(255,255,255,.9)}
+@media(max-width:620px){
+  .farm-media-grid figcaption{left:16px;right:60px;bottom:16px;gap:4px}
+  .farm-media-grid figcaption strong{font-size:.92rem}
+  .farm-media-grid figcaption span{font-size:.74rem}
+}
+/* Corporate-sized video pair with the sourcing steps underneath. */
+.farm-story-head{max-width:1360px;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(40px,7vw,110px)}
+.farm-story-head .farm-story-description{margin:0;font-size:.95rem;line-height:1.65;letter-spacing:normal}
+.farm-flow{max-width:1080px;margin:28px auto 0;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border:0}
+.farm-flow li{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;min-height:0;padding:0;border:0}
+.farm-flow b{color:#49693c;font-size:.78rem;line-height:1.4}
+.farm-flow span{font-size:.94rem;line-height:1.6;letter-spacing:-.02em}
+@media(max-width:900px){.farm-story-head{grid-template-columns:1fr;gap:24px}.farm-flow li:nth-child(-n+2){border:0}}
+@media(max-width:620px){
+  .farm-story-head .farm-story-description{font-size:.92rem}
+  .farm-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 18px;margin-top:24px}
+  .farm-flow li{padding:0;min-height:0}
+  .farm-flow span{font-size:.88rem}
+}
+/* Align the chapter title and media to the same left edge. */
+.farm-story .farm-media-grid,.farm-story .farm-flow{margin-left:max(0px,calc((100% - 1360px)/2));margin-right:0}
+.farm-media-grid figcaption{left:clamp(18px,3vw,38px);right:55px;bottom:clamp(18px,2.4vw,32px)}
+.farm-media-grid figcaption strong{font-family:"Noto Serif KR",serif;font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.65;letter-spacing:normal}
+.farm-media-grid figcaption span{font-size:.78rem;line-height:1.65;letter-spacing:normal;color:rgba(255,255,255,.72)}
+@media(max-width:700px){.farm-story-head,.farm-story .farm-media-grid,.farm-story .farm-flow{margin-left:0}}
+@media(max-width:620px){.farm-media-grid figcaption{left:18px;right:58px;bottom:18px}.farm-story-head .farm-story-description{font-size:.95rem}}
+@media(max-width:370px){.farm-story-head .farm-story-description{font-size:.88rem}}
+/* Larger equal-width videos with centered captions below. */
+.farm-story .farm-media-grid{max-width:1360px;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px auto 0;align-items:start}
+.farm-media-grid figure{background:transparent}
+.farm-media-grid figure:after{display:none}
+.farm-media-grid figcaption{position:static;display:grid;gap:6px;padding:18px 8px 0;text-align:center;color:#30423a}
+.farm-media-grid figcaption strong{font-family:inherit;font-size:1rem;font-weight:600;line-height:1.5;letter-spacing:-.02em}
+.farm-media-grid figcaption span{font-size:.86rem;line-height:1.7;letter-spacing:-.02em;color:#5e6963}
+.farm-media-grid figcaption br{display:none}
+.farm-media-grid .video-toggle{top:14px;right:14px;bottom:auto}
+.farm-story .farm-flow{max-width:1360px;margin:32px auto 0}
+@media(max-width:700px){.farm-story .farm-media-grid,.farm-story .farm-flow{margin-left:0}}
+@media(max-width:620px){
+  .farm-story .farm-media-grid{grid-template-columns:1fr;gap:24px;margin-top:26px}
+  .farm-media-grid figcaption{padding:14px 4px 0;gap:4px}
+  .farm-media-grid figcaption strong{font-size:.94rem}
+  .farm-media-grid figcaption span{font-size:.8rem}
+  .farm-story .farm-flow{margin-top:24px}
+}
+/* Captions inside the lower-left corner of each video. */
+.farm-media-grid figure:after{display:block}
+.farm-media-grid figcaption{position:absolute;left:20px;right:20px;bottom:20px;padding:0;gap:5px;text-align:left;color:#fff}
+.farm-media-grid figcaption strong{color:#fff}
+.farm-media-grid figcaption span{color:rgba(255,255,255,.9)}
+@media(max-width:620px){.farm-media-grid figcaption{left:16px;right:16px;bottom:16px;gap:4px}}
+/* Four sourcing cards below the videos. */
+.farm-story .farm-flow{gap:16px;margin-top:28px;align-items:stretch}
+.farm-story .farm-flow li{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:190px;padding:24px 22px;background:#f4f7ef;border:1px solid #e0e8d9;border-radius:12px}
+.farm-story .farm-flow b{display:grid;place-items:center;width:32px;height:32px;margin-bottom:18px;border-radius:50%;background:#e2ecd9;color:#49693c;font-size:.76rem;font-weight:700;letter-spacing:0}
+.farm-story .farm-flow h3{margin:0 0 10px;font-family:inherit;font-size:1rem;font-weight:600;line-height:1.5;letter-spacing:-.03em;color:#294b39;word-break:keep-all}
+.farm-story .farm-flow p{margin:0;font-size:.84rem;line-height:1.8;letter-spacing:-.02em;color:#61705f;word-break:keep-all}
+@media(max-width:1100px){.farm-story .farm-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+  .farm-story .farm-flow{gap:12px;margin-top:24px}
+  .farm-story .farm-flow li{min-height:0;padding:20px 16px;border-radius:10px}
+  .farm-story .farm-flow b{width:28px;height:28px;margin-bottom:14px;font-size:.7rem}
+  .farm-story .farm-flow h3{font-size:.9rem;margin-bottom:8px}
+  .farm-story .farm-flow p{font-size:.78rem;line-height:1.7}
+  .farm-story .farm-flow p br{display:none}
+}
+/* Natural mobile paragraphs under the chapter-one heading. */
+.farm-description-sentence{display:block}
+.farm-description-break{display:none}
+@media(max-width:700px){
+  .farm-story-head .farm-story-description{line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+  .farm-description-sentence + .farm-description-sentence{margin-top:12px}
+  .farm-story-head .farm-story-description .farm-description-break{display:block}
+}
+/* Keep card copy readable across desktop and mobile widths. */
+.farm-story .farm-flow h3,.farm-story .farm-flow p{word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty}
+.farm-story .farm-flow p span{display:block;font:inherit;line-height:inherit;letter-spacing:inherit;color:inherit}
+/* Share number, heading and body rows across each row of cards. */
+.farm-story .farm-flow{column-gap:16px;row-gap:0}
+.farm-story .farm-flow li{display:grid;grid-row:span 3;grid-template-rows:subgrid;align-items:start;align-content:start}
+.farm-story .farm-flow b{margin-bottom:18px}
+.farm-story .farm-flow h3{margin-bottom:10px}
+.farm-story .farm-flow p{margin:0}
+@media(max-width:1100px){.farm-story .farm-flow li:nth-child(n+3){margin-top:16px}}
+@media(max-width:620px){
+  .farm-story .farm-flow{column-gap:12px;row-gap:0}
+  .farm-story .farm-flow li:nth-child(n+3){margin-top:12px}
+  .farm-story .farm-flow b{margin-bottom:14px}
+  .farm-story .farm-flow h3{margin-bottom:8px}
+}
+/* Single-line card descriptions on desktop; keep mobile line breaks. */
+@media(min-width:1101px){
+  .farm-story .farm-flow li{padding-left:16px;padding-right:16px}
+  .farm-story .farm-flow p{font-size:clamp(.64rem,.85vw,.84rem);white-space:nowrap;letter-spacing:-.035em}
+  .farm-story .farm-flow p span{display:inline}
+}
+@media(min-width:701px) and (max-width:1100px){.farm-story .farm-flow p{white-space:nowrap}.farm-story .farm-flow p span{display:inline}}
+
+/* Match chapter-one heading spacing and the corporate photo note. */
+.farm-story>.section-label,.collection>.section-label{margin-bottom:28px}
+.collection-head h2{margin-top:0}
+.collection .collection-photo-note{margin:12px 0 0;color:#111;font-size:.72rem;font-weight:400;line-height:1.5;word-break:keep-all}
+@media(max-width:700px){.farm-story>.section-label,.collection>.section-label{margin-bottom:24px}}
+@media(max-width:620px){.collection .collection-photo-note{margin-top:10px;font-size:.7rem}}
+
+/* Mobile collection order: title, supporting copy, then the real-photo note. */
+@media(max-width:620px){
+  .collection .collection-head{display:grid;gap:20px}
+  .collection .collection-head>div:first-child{display:block}
+  .collection .collection-head>p{margin-top:0}
+  .collection>.collection-photo-note{margin:12px 0 0}
+}
+
+/* Final mobile spacing overrides. */
+@media(max-width:700px){
+  .packaging .packaging-head{gap:28px!important}
+  .contact .contact-copy>.eyebrow{margin-bottom:8px!important}
 }

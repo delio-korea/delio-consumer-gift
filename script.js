@@ -39,17 +39,37 @@ document.querySelectorAll('.farm-media-grid video').forEach((video) => {
 });
 
 const productFilters = document.querySelectorAll('[data-filter]');
-const productCards = document.querySelectorAll('[data-price]');
+const productCards = document.querySelectorAll('[data-category]');
 const productGrid = document.querySelector('[data-product-grid]');
+const collectionSection = document.querySelector('.collection');
+const collectionMore = document.querySelector('[data-collection-more]');
+if (collectionSection && collectionMore) {
+  collectionSection.classList.add('compact');
+  collectionMore.addEventListener('click', () => {
+    const expanded = collectionSection.classList.toggle('compact');
+    collectionMore.setAttribute('aria-expanded', String(!expanded));
+    collectionMore.querySelector('span').textContent = expanded ? '＋' : '－';
+    collectionMore.firstChild.textContent = expanded ? '선물세트 더보기 ' : '선물세트 접기 ';
+    if (expanded) {
+      const sectionTop = collectionSection.getBoundingClientRect().top + window.scrollY - 78;
+      window.scrollTo({ top: Math.max(0, sectionTop), behavior: 'smooth' });
+    }
+  });
+}
 
 productFilters.forEach((button) => {
   button.addEventListener('click', () => {
     const selected = button.dataset.filter;
-    productFilters.forEach((item) => item.classList.toggle('active', item === button));
+    productFilters.forEach((item) => { item.classList.toggle('active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
     productCards.forEach((card) => {
-      const visible = selected === 'all' || card.dataset.price === selected;
+      const visible = selected === 'all' || card.dataset.category === selected;
       card.classList.toggle('product-hidden', !visible);
     });
+    if (collectionSection && collectionMore) {
+      const allSelected = selected === 'all';
+      collectionSection.classList.toggle('compact', allSelected && collectionMore.getAttribute('aria-expanded') !== 'true');
+      collectionMore.hidden = !allSelected;
+    }
     if (productGrid) {
       productGrid.scrollTo({ left: 0, behavior: 'smooth' });
     }
